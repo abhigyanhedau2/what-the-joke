@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/what-the-joke/static/css/main.3b1a9010.css",
+    "main.js": "/what-the-joke/static/js/main.6d5c59c7.js",
+    "static/media/blob.png": "/what-the-joke/static/media/blob.0d9777957c1b2a428d31.png",
+    "static/media/laugh.png": "/what-the-joke/static/media/laugh.23d32fee1674045f39b0.png",
+    "index.html": "/what-the-joke/index.html",
+    "main.3b1a9010.css.map": "/what-the-joke/static/css/main.3b1a9010.css.map",
+    "main.6d5c59c7.js.map": "/what-the-joke/static/js/main.6d5c59c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b1a9010.css",
+    "static/js/main.6d5c59c7.js"
+  ]
+}
