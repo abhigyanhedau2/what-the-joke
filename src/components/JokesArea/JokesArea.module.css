@@ -8,6 +8,8 @@
 
 .category-list-wrapper {
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   list-style: none;
 }
 
@@ -15,7 +17,7 @@
   width: 7rem;
   height: 1.5rem;
   border: 3px solid #28344c;
-  margin: 0 1rem;
+  margin: 1rem 1rem;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
@@ -25,4 +27,12 @@
 .listItem.isActive button {
   color: white;
   background-color: #28344c;
+}
+
+@media only screen and (max-width: 475px) {
+  .listItem button {
+    width: 6.5rem;
+    height: 1.5rem;
+    margin: 0.5rem 0.5rem;
+  }
 }

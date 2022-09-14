@@ -6,3 +6,9 @@
     flex-wrap: wrap;
     padding: 3rem 5rem;
 }
+
+@media only screen and (max-width: 1125px){
+    .jokeListWrapper {
+        padding: 1.5rem 1.5rem;
+    }
+}

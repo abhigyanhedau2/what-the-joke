@@ -3,7 +3,9 @@ import './HRLine.module.css';
 
 const HRLine = (props) => {
     return (
-        <hr style={{ '--lineColor': props.color }} />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <hr style={{ '--lineColor': props.color }} />
+        </div>
     )
 };
 

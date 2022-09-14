@@ -29,7 +29,7 @@
 }
 
 .navItemWrapper.isActive {
-  border-bottom: 3px solid #f3c027;;
+  border-bottom: 3px solid #f3c027;
 }
 
 .navItemText {
@@ -46,4 +46,21 @@
 .logo h1 {
   color: white;
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 550px) {
+  .nav-wrapper {
+    flex-direction: column;
+    height: 110px;
+    align-items: center;
+    justify-content: center;
+  }
+  .navItemsWrapper {
+    margin-top: 1rem;
+    padding-right: 1rem;
+  }
+
+  .logo {
+    margin-left: 0rem;
+  }
 }

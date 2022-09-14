@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Title.module.css';
-import blobSvg from '../../assets/blob.svg';
+import blob from '../../assets/blob.png';
 import laughImg from '../../assets/laugh.png';
 
 const Title = () => {
@@ -12,8 +12,8 @@ const Title = () => {
                 <p>Welcome to <b>What The Joke!</b> Your one stop solution for all the best jokes on the internet.</p>
             </div>
             <div className={classes["blob-and-image-wrapper"]}>
-                <img className={classes["laugh-img"]} src={laughImg} alt="laughing-cartoon" />
-                <img className={classes.blob} src={blobSvg} alt="blob-svg" />
+                <img className={`${classes["laugh-img"]} ${classes["title-img"]}`} src={laughImg} alt="laughing-cartoon" />
+                <img className={`${classes.blob} ${classes["title-img"]}`} src={blob} alt="blob" />
             </div>
         </div>
     )
