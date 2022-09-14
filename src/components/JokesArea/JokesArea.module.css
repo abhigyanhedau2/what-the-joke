@@ -11,10 +11,6 @@
   list-style: none;
 }
 
-.listItem {
-  cursor: pointer;
-}
-
 .listItem button {
   width: 7rem;
   height: 1.5rem;
@@ -22,6 +18,7 @@
   margin: 0 1rem;
   font-weight: bold;
   border-radius: 10px;
+  cursor: pointer;
   background-color: white;
 }
 

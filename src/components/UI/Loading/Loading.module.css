@@ -1,0 +1,11 @@
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.loader {
+  overflow-y: hidden;
+}
