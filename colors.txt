@@ -1,0 +1,2 @@
+dark blue = #28344c
+yellow = #f3c027

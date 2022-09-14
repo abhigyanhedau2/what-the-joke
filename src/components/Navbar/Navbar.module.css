@@ -1,0 +1,38 @@
+.nav-wrapper {
+  height: 50px;
+  background-color: #28344c;
+}
+
+.navItemsWrapper {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  padding-right: 2rem;
+}
+
+.navItemWrapper {
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+  width: 6%;
+}
+
+.navItemWrapper:hover {
+  padding-bottom: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #f3c027;
+}
+
+.navItemWrapper.isActive {
+  padding-bottom: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #f3c027;
+}
+
+.navItemText {
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}

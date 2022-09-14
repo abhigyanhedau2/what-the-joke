@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.title-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-desc-wrapper {
+  width: 50%;
+  padding: 6rem 7rem 0rem;
+  color: #28344c;
+}
+
+.title-desc-wrapper p {
+  margin: 2rem 0;
+}
+
+.title-desc-wrapper h1 {
+  font-size: 7rem;
+}
+
+.blob-and-image-wrapper {
+  position: relative;
+  margin-right: 5rem;
+}
+
+.laugh-img {
+  position: absolute;
+  width: 80%;
+  top: 4rem;
+  left: 4rem;
+}
+
+.blob {
+  width: 40vw;
+}
