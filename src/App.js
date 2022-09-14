@@ -7,6 +7,7 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
+import Footer from './components/Footer/Footer';
 
 const App = () => {
 	return (
@@ -16,6 +17,7 @@ const App = () => {
 				<Route exact path="/" element={<Home />} />
 				<Route exact path="/favorites" element={<Favorites />} />
 			</Routes>
+			<Footer />
 		</BrowserRouter>
 	)
 };

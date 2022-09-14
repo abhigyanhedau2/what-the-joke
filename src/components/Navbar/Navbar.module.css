@@ -51,7 +51,7 @@
 @media only screen and (max-width: 550px) {
   .nav-wrapper {
     flex-direction: column;
-    height: 110px;
+    height: 150px;
     align-items: center;
     justify-content: center;
   }
@@ -63,4 +63,9 @@
   .logo {
     margin-left: 0rem;
   }
+
+  .logo h1 {
+    color: white;
+    font-size: 2rem;
+  }  
 }
