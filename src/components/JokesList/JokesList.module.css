@@ -4,7 +4,23 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 3rem 5rem;
+    padding: 0rem 5rem 3rem;
+}
+
+.showMoreButton {
+    width: 85%;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid #28344c;
+    border-radius: 10px;
+    box-shadow: 0 0 4px #28344c;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.showMoreButton:hover {
+    background-color: #28344c08;
+    box-shadow: 0 0 7px #28344c;
 }
 
 @media only screen and (max-width: 1125px){

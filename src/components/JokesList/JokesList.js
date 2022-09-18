@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import JokeItem from '../JokeItem/JokeItem';
 import classes from './JokesList.module.css';
 
@@ -12,7 +12,10 @@ const JokesList = (props) => {
     })
 
     return (
-        <div className={classes.jokeListWrapper}>{jokes}</div>
+        <Fragment>
+            <div className={classes.jokeListWrapper}>{jokes}</div>
+            {!props.isLoading && <button className={classes.showMoreButton} onClick={props.onFetchMoreJokes}>Show More <i class="fa-solid fa-angle-down"></i> </button>}
+        </Fragment>
     )
 };
 

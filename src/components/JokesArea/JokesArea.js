@@ -51,6 +51,23 @@ const JokesArea = () => {
         [fetchData]
     );
 
+    const fetchMoreJokes = async () => {
+
+        const tempArr = [...jokesArr];
+
+        setIsLoading(true);
+
+        for (let i = 0; i < 9; i++) {
+            const aJoke = await fetchData();
+
+            tempArr.push(aJoke);
+        }
+
+        setJokesArr(tempArr);
+
+        setIsLoading(false);
+    };
+
     useEffect(() => {
 
         fetchJokesArr();
@@ -75,8 +92,8 @@ const JokesArea = () => {
                     <li className={`${classes.listItem} ${category === 'Christmas' ? classes.isActive : ''}`} onClick={() => changeCategory('Christmas')}><button>Christmas</button></li>
                 </ul>
             </div>
+            <JokesList category={category} jokesArr={jokesArr} onFetchMoreJokes={fetchMoreJokes} isLoading={isLoading} />
             {isLoading && <Loading />}
-            <JokesList category={category} jokesArr={jokesArr} />
         </div>
     )
 };
