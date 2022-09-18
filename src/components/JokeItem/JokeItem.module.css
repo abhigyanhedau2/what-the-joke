@@ -4,10 +4,23 @@
   padding: 1rem 1rem 2rem;
   border-radius: 20px;
   transition: 0.2s;
+  position: relative;
 }
 
 .jokeItemWrapper:hover {
   transform: translate(-1%, -1%);
+}
+
+.actions {
+  position: absolute;
+  text-align: right;
+  bottom: 1rem;
+  right: 2rem;
+}
+
+.actions i {
+  cursor: pointer;
+  color: #f3c027;
 }
 
 @media only screen and (max-width: 1350px) {
