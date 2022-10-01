@@ -2,8 +2,11 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import classes from './Navbar.module.css';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+    const jokeQuantity = useSelector(state => state.favJokes.quantity);
 
     const location = useLocation().pathname;
 
@@ -18,7 +21,7 @@ const Navbar = () => {
                     <Link className={classes.navItemText} to='/'>Home</Link>
                 </div>
                 <div className={`${classes.navItemWrapper} ${location === '/favorites' ? classes.isActive : ''}`}>
-                    <Link className={classes.navItemText} to='/favorites'>Favorites</Link>
+                    <Link className={classes.navItemText} to='/favorites'>Favorites ({jokeQuantity})</Link>
                 </div>
             </div>
         </nav>

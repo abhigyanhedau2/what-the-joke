@@ -4,6 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
 }
 
 .navItemsWrapper {
@@ -19,7 +23,7 @@
 
 .navItemWrapper {
   margin: 0 2rem;
-  width: 5rem;
+  width: 6rem;
   text-align: center;
   cursor: pointer;
 }
@@ -67,5 +71,5 @@
   .logo h1 {
     color: white;
     font-size: 2rem;
-  }  
+  }
 }

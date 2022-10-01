@@ -1,25 +1,28 @@
 import React from 'react';
 import Card from '../UI/Card/Card';
 import classes from './JokeItem.module.css';
+import { favJokesActions } from '../../store/favJokes-slice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const JokeItem = (props) => {
 
-    const addToFavorites = async () => {
+    const favJokesArr = useSelector(state => state.favJokes.favJokesArr);
+    const dispatch = useDispatch();
 
-        try {
-            fetch('https://what-the-joke-6ab58-default-rtdb.firebaseio.com/favJokes.json', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    jokeId: props.id
-                })
-            });
-        } catch (error) {
-            console.log(error)
-        }
+    const checkJokeExists = () => {
+        return favJokesArr.includes(props.id);
+    };
+
+    const jokeExists = checkJokeExists();
+
+    const likeClickHandler = async () => {
+
+        if (!jokeExists)
+            dispatch(favJokesActions.addJokeToFavorites({ id: props.id }));
+
+        else 
+            dispatch(favJokesActions.removeJokeFromFavorites({ id: props.id }));
+
     };
 
     return (
@@ -28,7 +31,7 @@ const JokeItem = (props) => {
             <br />
             <p>{props.delivery}</p>
             <div className={classes.actions}>
-                <i className="fa-regular fa-heart" onClick={addToFavorites}></i>
+                <i className={`fa-${jokeExists ? 'solid' : 'regular'} fa-heart`} onClick={likeClickHandler}></i>
             </div>
         </Card>
     )

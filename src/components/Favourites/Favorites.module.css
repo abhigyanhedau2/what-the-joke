@@ -1,0 +1,12 @@
+.favoritesWrapper {
+    min-height: 70vh;
+}
+
+.favoritesWrapper h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+.favoriteJokesListWrapper {
+    padding-top: 2rem;
+}
