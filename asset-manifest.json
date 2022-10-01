@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/what-the-joke/static/css/main.2315609f.css",
-    "main.js": "/what-the-joke/static/js/main.9c43f204.js",
+    "main.css": "/what-the-joke/static/css/main.b5d88a02.css",
+    "main.js": "/what-the-joke/static/js/main.675ce36e.js",
     "static/media/blob.png": "/what-the-joke/static/media/blob.0d9777957c1b2a428d31.png",
     "static/media/laugh.png": "/what-the-joke/static/media/laugh.23d32fee1674045f39b0.png",
     "index.html": "/what-the-joke/index.html",
-    "main.2315609f.css.map": "/what-the-joke/static/css/main.2315609f.css.map",
-    "main.9c43f204.js.map": "/what-the-joke/static/js/main.9c43f204.js.map"
+    "main.b5d88a02.css.map": "/what-the-joke/static/css/main.b5d88a02.css.map",
+    "main.675ce36e.js.map": "/what-the-joke/static/js/main.675ce36e.js.map"
   },
   "entrypoints": [
-    "static/css/main.2315609f.css",
-    "static/js/main.9c43f204.js"
+    "static/css/main.b5d88a02.css",
+    "static/js/main.675ce36e.js"
   ]
 }
