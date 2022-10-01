@@ -13,10 +13,23 @@ import { useSelector } from 'react-redux';
 const App = () => {
 
 	const favJokesArr = useSelector(state => state.favJokes.favJokesArr);
+	const quantity = useSelector(state => state.favJokes.quantity);
 
 	useEffect(() => {
-		console.log(favJokesArr);
-	}, [favJokesArr]);
+
+		const sendCartData = () => {
+			fetch('https://what-the-joke-6ab58-default-rtdb.firebaseio.com/favJokes.json', {
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ favJokesArr, quantity })
+			})
+		};
+
+		sendCartData();
+
+	}, [favJokesArr, quantity]);
 
 	return (
 		<BrowserRouter basename={process.env.PUBLIC_URL}>
