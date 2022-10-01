@@ -9,18 +9,12 @@ const JokeItem = (props) => {
     const favJokesArr = useSelector(state => state.favJokes.favJokesArr);
     const dispatch = useDispatch();
 
-    const checkJokeExists = () => {
-        return favJokesArr.includes(props.id);
-    };
-
-    const jokeExists = checkJokeExists();
-
     const likeClickHandler = async () => {
 
-        if (!jokeExists)
+        if (!favJokesArr.includes(props.id))
             dispatch(favJokesActions.addJokeToFavorites({ id: props.id }));
 
-        else 
+        else
             dispatch(favJokesActions.removeJokeFromFavorites({ id: props.id }));
 
     };
@@ -31,7 +25,7 @@ const JokeItem = (props) => {
             <br />
             <p>{props.delivery}</p>
             <div className={classes.actions}>
-                <i className={`fa-${jokeExists ? 'solid' : 'regular'} fa-heart`} onClick={likeClickHandler}></i>
+                <i className={`fa-${favJokesArr.includes(props.id) ? 'solid' : 'regular'} fa-heart`} onClick={likeClickHandler}></i>
             </div>
         </Card>
     )

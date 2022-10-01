@@ -8,16 +8,52 @@ import {
 	Route,
 } from "react-router-dom";
 import Footer from './components/Footer/Footer';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { favJokesActions } from './store/favJokes-slice';
+
+let isInitial = true;
 
 const App = () => {
 
 	const favJokesArr = useSelector(state => state.favJokes.favJokesArr);
 	const quantity = useSelector(state => state.favJokes.quantity);
 
+	const dispatch = useDispatch();
+
+	// Fetch favorite items
 	useEffect(() => {
 
-		const sendCartData = () => {
+		const getFavJokes = async () => {
+			const response = await fetch('https://what-the-joke-6ab58-default-rtdb.firebaseio.com/favJokes.json');
+
+			if (!response.ok)
+				throw new Error('Fetching Favorite Jokes failed');
+
+			const data = await response.json();
+
+			dispatch(favJokesActions.replaceFavorites({
+				favJokesArr: data.favJokesArr,
+				quantity: data.quantity
+			}))
+		};
+
+		try {
+			getFavJokes();
+		} catch (error) {
+			console.log(error);
+		}
+
+	}, [dispatch]);
+
+	// Send favorite items whenever they get changed
+	useEffect(() => {
+
+		if (isInitial) {
+			isInitial = false;
+			return;
+		}
+
+		const sendFavJokesData = () => {
 			fetch('https://what-the-joke-6ab58-default-rtdb.firebaseio.com/favJokes.json', {
 				method: 'PUT',
 				headers: {
@@ -27,7 +63,11 @@ const App = () => {
 			})
 		};
 
-		sendCartData();
+		try {
+			sendFavJokesData();
+		} catch (error) {
+			console.log(error);
+		}
 
 	}, [favJokesArr, quantity]);
 

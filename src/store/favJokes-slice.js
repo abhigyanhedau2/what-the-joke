@@ -4,6 +4,12 @@ const favJokesSlice = createSlice({
     name: 'favJokes',
     initialState: { favJokesArr: [], quantity: 0 },
     reducers: {
+        replaceFavorites(state, action) {
+
+            state.favJokesArr = action.payload.favJokesArr;
+            state.quantity = action.payload.quantity;
+
+        },
         addJokeToFavorites(state, action) {
 
             const newJokeId = action.payload.id;

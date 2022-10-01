@@ -6,7 +6,7 @@ import jokeListClasses from '../JokesList/JokesList.module.css';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useCallback } from 'react';
-
+import EmptyFavorites from './EmptyFavorites';
 const Favorites = () => {
 
     const [favJokesArr, setFavJokesArr] = useState([]);
@@ -59,14 +59,18 @@ const Favorites = () => {
             return <JokeItem key={item.id} id={item.id} setup={item.joke} delivery="" />
         else
             return <JokeItem key={item.id} id={item.id} setup={item.setup} delivery={item.delivery} />
-    })
+    });
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className={classes.favoritesWrapper}>
             <h1>Favorites</h1>
             <HRLine color="#28344c" />
             <div className={`${jokeListClasses.jokeListWrapper} ${classes.favoriteJokesListWrapper}`}>
-                {favJokesIds.length === 0 && <p>Add Some Jokes to Favorites.</p>}
+                {favJokesIds.length === 0 && <EmptyFavorites />}
                 {favJokesIds.length !== 0 && jokes}
             </div>
         </div>
